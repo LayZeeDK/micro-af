@@ -5,23 +5,33 @@
   },
   "generators": {
     "@nrwl/angular:application": {
-      "style": "css",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
       "e2eTestRunner": "cypress",
-      "strict": true
+      "linter": "eslint",
+      "strict": true,
+      "style": "css",
+      "unitTestRunner": "jest"
     },
     "@nrwl/angular:library": {
-      "style": "css",
       "linter": "eslint",
-      "unitTestRunner": "jest",
-      "strict": true
+      "strict": true,
+      "style": "css",
+      "unitTestRunner": "jest"
     },
     "@schematics/angular:component": {
-      "displayBlock": true
+      "changeDetection": "OnPush",
+      "displayBlock": true,
+      "export": true,
+      "inlineStyle": true,
+      "inlineTemplate": true,
+      "flat": true,
+      "skipTests": true,
+      "style": "css",
+      "viewEncapsulation": "ShadowDom"
     },
-    "@nrwl/angular:component": {
-      "style": "css"
+    "@schematics/angular:module": {
+      "commonModule": false,
+      "flat": true,
+      "routing": false
     }
   },
   "projects": {
@@ -168,9 +178,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/google-maps-app"
-          ],
+          "outputs": ["coverage/libs/google-maps-app"],
           "options": {
             "jestConfig": "libs/google-maps-app/jest.config.js",
             "passWithNoTests": true
