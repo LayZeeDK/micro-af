@@ -17,6 +17,9 @@ export class HostAppModule {
       import('@micro-af/youtube-app').then(({ YoutubeAppComponent }) =>
         hostApp.bootstrap(YoutubeAppComponent)
       );
+      import('@micro-af/zippy-app').then(({ ZippyAppComponent }) =>
+        hostApp.bootstrap(ZippyAppComponent)
+      );
     });
   }
 }

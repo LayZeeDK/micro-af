@@ -15,6 +15,7 @@ import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, NgModule } 
 
     <maps-app></maps-app>
     <tube-app></tube-app>
+    <zippy-app></zippy-app>
   `,
 })
 export class HostAppComponent {}
