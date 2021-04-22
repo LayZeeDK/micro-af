@@ -1,19 +1,23 @@
 {
   "version": 2,
-  "projects": {},
   "cli": {
     "defaultCollection": "@nrwl/angular"
   },
   "generators": {
     "@nrwl/angular:application": {
+      "e2eTestRunner": "cypress",
       "linter": "eslint",
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
+      "strict": true,
+      "unitTestRunner": "jest"
     },
     "@nrwl/angular:library": {
       "linter": "eslint",
+      "strict": true,
       "unitTestRunner": "jest"
     },
-    "@nrwl/angular:component": {}
-  }
+    "@schematics/angular:component": {
+      "displayBlock": true
+    }
+  },
+  "projects": {}
 }
