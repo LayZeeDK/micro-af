@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@micro-af/google-maps-app": ["libs/google-maps-app/src/index.ts"]
+      "@micro-af/google-maps-app": ["libs/google-maps-app/src/index.ts"],
+      "@micro-af/youtube-app": ["libs/youtube-app/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

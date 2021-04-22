@@ -32,6 +32,9 @@
       "commonModule": false,
       "flat": true,
       "routing": false
+    },
+    "@nrwl/angular:component": {
+      "style": "css"
     }
   },
   "projects": {
@@ -54,7 +57,9 @@
               "apps/host-app/src/favicon.ico",
               "apps/host-app/src/assets"
             ],
-            "styles": ["apps/host-app/src/styles.css"],
+            "styles": [
+              "apps/host-app/src/styles.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -115,7 +120,9 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/host-app"],
+          "outputs": [
+            "coverage/apps/host-app"
+          ],
           "options": {
             "jestConfig": "apps/host-app/jest.config.js",
             "passWithNoTests": true
@@ -144,7 +151,9 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/host-app-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/host-app-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -178,9 +187,50 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/google-maps-app"],
+          "outputs": [
+            "coverage/libs/google-maps-app"
+          ],
           "options": {
             "jestConfig": "libs/google-maps-app/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "youtube-app": {
+      "projectType": "library",
+      "root": "libs/youtube-app",
+      "sourceRoot": "libs/youtube-app/src",
+      "prefix": "tube",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/youtube-app/tsconfig.lib.json",
+            "project": "libs/youtube-app/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/youtube-app/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/youtube-app/src/**/*.ts",
+              "libs/youtube-app/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/youtube-app"
+          ],
+          "options": {
+            "jestConfig": "libs/youtube-app/jest.config.js",
             "passWithNoTests": true
           }
         }
