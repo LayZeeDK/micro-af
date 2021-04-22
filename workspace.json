@@ -3,6 +3,7 @@
   "cli": {
     "defaultCollection": "@nrwl/angular"
   },
+  "defaultProject": "host-app",
   "generators": {
     "@nrwl/angular:application": {
       "e2eTestRunner": "cypress",
@@ -45,7 +46,7 @@
       "prefix": "host",
       "targets": {
         "build": {
-          "executor": "@angular-devkit/build-angular:browser",
+          "executor": "@nrwl/angular:webpack-browser",
           "options": {
             "outputPath": "dist/apps/host-app",
             "index": "apps/host-app/src/index.html",
@@ -57,9 +58,7 @@
               "apps/host-app/src/favicon.ico",
               "apps/host-app/src/assets"
             ],
-            "styles": [
-              "apps/host-app/src/styles.css"
-            ],
+            "styles": ["apps/host-app/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -93,13 +92,13 @@
           }
         },
         "serve": {
-          "executor": "@angular-devkit/build-angular:dev-server",
+          "executor": "@nrwl/web:file-server",
           "options": {
-            "browserTarget": "host-app:build"
+            "buildTarget": "host-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "host-app:build:production"
+              "buildTarget": "host-app:build:production"
             }
           }
         },
@@ -120,9 +119,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/host-app"
-          ],
+          "outputs": ["coverage/apps/host-app"],
           "options": {
             "jestConfig": "apps/host-app/jest.config.js",
             "passWithNoTests": true
@@ -151,9 +148,7 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/host-app-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/host-app-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -187,9 +182,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/google-maps-app"
-          ],
+          "outputs": ["coverage/libs/google-maps-app"],
           "options": {
             "jestConfig": "libs/google-maps-app/jest.config.js",
             "passWithNoTests": true
@@ -226,9 +219,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/youtube-app"
-          ],
+          "outputs": ["coverage/libs/youtube-app"],
           "options": {
             "jestConfig": "libs/youtube-app/jest.config.js",
             "passWithNoTests": true
@@ -236,6 +227,5 @@
         }
       }
     }
-  },
-  "defaultProject": "host-app"
+  }
 }
