@@ -138,6 +138,45 @@
           }
         }
       }
+    },
+    "google-maps-app": {
+      "projectType": "library",
+      "root": "libs/google-maps-app",
+      "sourceRoot": "libs/google-maps-app/src",
+      "prefix": "maps",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/google-maps-app/tsconfig.lib.json",
+            "project": "libs/google-maps-app/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/google-maps-app/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/google-maps-app/src/**/*.ts",
+              "libs/google-maps-app/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/google-maps-app"
+          ],
+          "options": {
+            "jestConfig": "libs/google-maps-app/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "defaultProject": "host-app"

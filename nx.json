@@ -13,6 +13,7 @@
   },
   "projects": {
     "host-app": { "tags": [] },
-    "host-app-e2e": { "tags": [], "implicitDependencies": ["host-app"] }
+    "host-app-e2e": { "tags": [], "implicitDependencies": ["host-app"] },
+    "google-maps-app": { "tags": [] }
   }
 }
