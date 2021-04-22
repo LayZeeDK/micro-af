@@ -46,7 +46,7 @@
       "prefix": "host",
       "targets": {
         "build": {
-          "executor": "@nrwl/angular:webpack-browser",
+          "executor": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/apps/host-app",
             "index": "apps/host-app/src/index.html",
@@ -92,13 +92,13 @@
           }
         },
         "serve": {
-          "executor": "@nrwl/web:file-server",
+          "executor": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "buildTarget": "host-app:build"
+            "browserTarget": "host-app:build"
           },
           "configurations": {
             "production": {
-              "buildTarget": "host-app:build:production"
+              "browserTarget": "host-app:build:production"
             }
           }
         },
@@ -159,18 +159,6 @@
       "sourceRoot": "libs/google-maps-app/src",
       "prefix": "maps",
       "targets": {
-        "build": {
-          "executor": "@nrwl/angular:ng-packagr-lite",
-          "options": {
-            "tsConfig": "libs/google-maps-app/tsconfig.lib.json",
-            "project": "libs/google-maps-app/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/google-maps-app/tsconfig.lib.prod.json"
-            }
-          }
-        },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
@@ -196,18 +184,6 @@
       "sourceRoot": "libs/youtube-app/src",
       "prefix": "tube",
       "targets": {
-        "build": {
-          "executor": "@nrwl/angular:ng-packagr-lite",
-          "options": {
-            "tsConfig": "libs/youtube-app/tsconfig.lib.json",
-            "project": "libs/youtube-app/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/youtube-app/tsconfig.lib.prod.json"
-            }
-          }
-        },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
