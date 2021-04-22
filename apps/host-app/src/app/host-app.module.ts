@@ -1,7 +1,5 @@
 import { ApplicationRef, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { GoogleMapsAppComponent } from '@micro-af/google-maps-app';
-import { YoutubeAppComponent } from '@micro-af/youtube-app';
 import { first } from 'rxjs/operators';
 
 import { HostAppComponent, HostAppScam } from './host-app.sfc';
@@ -13,8 +11,12 @@ import { HostAppComponent, HostAppScam } from './host-app.sfc';
 export class HostAppModule {
   constructor(hostApp: ApplicationRef) {
     hostApp.isStable.pipe(first((isStable) => isStable)).subscribe(() => {
-      hostApp.bootstrap(GoogleMapsAppComponent);
-      hostApp.bootstrap(YoutubeAppComponent);
+      import('@micro-af/google-maps-app').then(({ GoogleMapsAppComponent }) =>
+        hostApp.bootstrap(GoogleMapsAppComponent)
+      );
+      import('@micro-af/youtube-app').then(({ YoutubeAppComponent }) =>
+        hostApp.bootstrap(YoutubeAppComponent)
+      );
     });
   }
 }
