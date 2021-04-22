@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    
     "nx": "nx",
     "start": "nx serve",
     "build": "nx build",
@@ -31,7 +30,6 @@
     "tslib": "^2.0.0"
   },
   "devDependencies": {
-     
     "@nrwl/tao": "12.0.8",
     "@nrwl/cli": "12.0.8",
     "@nrwl/workspace": "12.0.8",
