@@ -44,9 +44,7 @@
               "apps/host-app/src/favicon.ico",
               "apps/host-app/src/assets"
             ],
-            "styles": [
-              "apps/host-app/src/styles.css"
-            ],
+            "styles": ["apps/host-app/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -67,13 +65,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ]
             }
@@ -107,9 +105,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/host-app"
-          ],
+          "outputs": ["coverage/apps/host-app"],
           "options": {
             "jestConfig": "apps/host-app/jest.config.js",
             "passWithNoTests": true
@@ -138,9 +134,7 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/host-app-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/host-app-e2e/**/*.{js,ts}"]
           }
         }
       }
