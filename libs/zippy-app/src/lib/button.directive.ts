@@ -6,12 +6,12 @@ import { Directive, EventEmitter, HostListener, NgModule, Output } from '@angula
 })
 export class ButtonDirective {
   @Output()
-  appClick = new EventEmitter<void>();
+  zippyClick = new EventEmitter<void>();
 
   @HostListener('click')
   onClick() {
     console.log('Click');
-    this.appClick.emit();
+    this.zippyClick.emit();
   }
 }
 
