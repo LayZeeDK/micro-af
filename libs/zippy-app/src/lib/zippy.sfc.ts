@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, Input, NgModule, ViewEncapsulation } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  NgModule,
+  ViewEncapsulation,
+  ɵdetectChanges as detectChanges,
+} from '@angular/core';
 
 import { ButtonScam } from './button.directive';
 
@@ -31,6 +38,7 @@ export class ZippyComponent {
 
   onToggle() {
     this.isExpanded = !this.isExpanded;
+    detectChanges(this);
   }
 }
 
