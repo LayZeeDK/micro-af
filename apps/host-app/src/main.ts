@@ -9,5 +9,7 @@ if (environment.production) {
 }
 
 platformBrowserDynamic()
-  .bootstrapModule(HostAppModule)
+  .bootstrapModule(HostAppModule, {
+    ngZone: 'noop',
+  })
   .catch((err) => console.error(err));
