@@ -1,8 +1,7 @@
-import { ChangeDetectionStrategy, Component, NgModule, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.ShadowDom,
   selector: 'host-app',
   styles: [
     `
@@ -11,11 +10,17 @@ import { ChangeDetectionStrategy, Component, NgModule, ViewEncapsulation } from 
       }
     `,
   ],
-  template: `Host app`,
+  template: `
+    <h1>MicroAF</h1>
+
+    <maps-app></maps-app>
+    <tube-app></tube-app>
+  `,
 })
 export class HostAppComponent {}
 
 @NgModule({
   declarations: [HostAppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HostAppScam {}
