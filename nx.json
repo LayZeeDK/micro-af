@@ -1,36 +1,21 @@
 {
   "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     ".eslintrc.json": "*"
   },
-  "affected": {
-    "defaultBase": "main"
-  },
+  "affected": { "defaultBase": "main" },
   "npmScope": "micro-af",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
   "projects": {
-    "host-app": {
-      "tags": []
-    },
-    "host-app-e2e": {
-      "tags": [],
-      "implicitDependencies": ["host-app"]
-    },
-    "google-maps-app": {
-      "tags": []
-    },
-    "youtube-app": {
-      "tags": []
-    }
+    "host-app": { "tags": [] },
+    "host-app-e2e": { "tags": [], "implicitDependencies": ["host-app"] },
+    "google-maps-app": { "tags": [] },
+    "youtube-app": { "tags": [] },
+    "zippy-app": { "tags": [] }
   }
 }

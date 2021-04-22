@@ -202,6 +202,31 @@
           }
         }
       }
+    },
+    "zippy-app": {
+      "projectType": "library",
+      "root": "libs/zippy-app",
+      "sourceRoot": "libs/zippy-app/src",
+      "prefix": "zippy",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/zippy-app/src/**/*.ts",
+              "libs/zippy-app/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/zippy-app"],
+          "options": {
+            "jestConfig": "libs/zippy-app/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
