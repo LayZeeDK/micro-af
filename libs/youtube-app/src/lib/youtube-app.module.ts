@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+import { YoutubeAppComponent, YoutubeAppScam } from './youtube-app.sfc';
 
 @NgModule({
-  imports: [CommonModule],
+  bootstrap: [YoutubeAppComponent],
+  imports: [YoutubeAppScam],
 })
 export class YoutubeAppModule {}
