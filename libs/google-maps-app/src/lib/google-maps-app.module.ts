@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+import { GoogleMapsAppComponent, GoogleMapsScam } from './google-maps-app.sfc';
 
 @NgModule({
-  imports: [CommonModule],
+  bootstrap: [GoogleMapsAppComponent],
+  imports: [GoogleMapsScam],
 })
 export class GoogleMapsAppModule {}
